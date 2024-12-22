@@ -4,15 +4,15 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-4 text-primary"><i class="bi bi-pencil-square"></i> Edit Post</h1>
+        <h1 class="mb-4 text-primary"><i class="bi bi-pencil-square"></i> Edit Postingan</h1>
 
         <a href="{{ route('posts.index') }}" class="btn btn-outline-secondary mb-3">
-            <i class="bi bi-arrow-left"></i> Back
+            <i class="bi bi-arrow-left"></i> Kembali
         </a>
 
         @if ($errors->any())
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Whoops!</strong> Ada beberapa masalah dengan input Anda:
+                <strong>Whoops!</strong> Terdapat masalah pada input Anda:
                 <ul class="mb-0">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -24,7 +24,7 @@
 
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white">
-                <h5 class="mb-0"><i class="bi bi-edit"></i> Edit Post Details</h5>
+                <h5 class="mb-0"><i class="bi bi-edit"></i> Edit Detail Postingan </h5>
             </div>
             <div class="card-body">
                 <form action="{{ route('posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
@@ -33,9 +33,9 @@
 
                     <!-- Title -->
                     <div class="mb-3">
-                        <label for="title" class="form-label"><i class="bi bi-card-text"></i> Title</label>
+                        <label for="title" class="form-label"><i class="bi bi-card-text"></i> Judul</label>
                         <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror"
-                               value="{{ old('title', $post->title) }}" placeholder="Enter post title">
+                               value="{{ old('title', $post->title) }}" placeholder="Masukkan judul postingan">
                         @error('title')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -45,9 +45,9 @@
 
                     <!-- Content -->
                     <div class="mb-3">
-                        <label for="content" class="form-label"><i class="bi bi-file-text"></i> Content</label>
+                        <label for="content" class="form-label"><i class="bi bi-file-text"></i> Konten</label>
                         <textarea name="content" id="content" class="form-control @error('content') is-invalid @enderror" rows="5"
-                                  placeholder="Enter post content">{{ old('content', $post->content) }}</textarea>
+                                  placeholder="Masukkan konten postingan">{{ old('content', $post->content) }}</textarea>
                         @error('content')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -57,9 +57,9 @@
 
                     <!-- Category -->
                     <div class="mb-3">
-                        <label for="category_id" class="form-label"><i class="bi bi-tags"></i> Category</label>
+                        <label for="category_id" class="form-label"><i class="bi bi-tags"></i> Kategori</label>
                         <select name="category_id" id="category_id" class="form-select @error('category_id') is-invalid @enderror">
-                            <option value="">Choose Category</option>
+                            <option value="">Pilih Kategori</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}"
                                     {{ $category->id == old('category_id', $post->category_id) ? 'selected' : '' }}>
@@ -76,7 +76,7 @@
 
                     <!-- Image Upload -->
                     <div class="mb-3">
-                        <label for="image" class="form-label"><i class="bi bi-image"></i> Upload Image</label>
+                        <label for="image" class="form-label"><i class="bi bi-image"></i> Upload Gambar</label>
                         <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
                         @if($post->image)
                             <div class="mt-2">
@@ -90,11 +90,10 @@
                         @enderror
                     </div>
 
-                    <!-- Author -->
                     <div class="mb-3">
                         <label for="author_id" class="form-label"><i class="bi bi-people"></i> Author</label>
                         <select name="author_id" id="author_id" class="form-select @error('author_id') is-invalid @enderror">
-                            <option value="">Choose Author</option>
+                            <option value="">Pilih Author</option>
                             @foreach ($authors as $author)
                                 <option value="{{ $author->id }}"
                                     {{ $author->id == old('author_id', $post->author_id) ? 'selected' : '' }}>
@@ -114,12 +113,12 @@
                         <input type="hidden" name="is_published" value="0">
                         <input type="checkbox" name="is_published" value="1" id="is_published"
                                class="form-check-input" {{ old('is_published', $post->is_published) ? 'checked' : '' }}>
-                        <label for="is_published" class="form-check-label"><i class="bi bi-upload"></i> Publish</label>
+                        <label for="is_published" class="form-check-label"><i class="bi bi-upload"></i> Unggah</label>
                     </div>
 
                     <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary">
-                        <i class="bi bi-save"></i> Update Post
+                        <i class="bi bi-save"></i> Update Postingan
                     </button>
                 </form>
             </div>

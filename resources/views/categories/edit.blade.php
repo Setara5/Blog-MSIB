@@ -4,15 +4,15 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-4 text-primary"><i class="bi bi-pencil-square"></i> Edit Category</h1>
+        <h1 class="mb-4 text-primary"><i class="bi bi-pencil-square"></i> Edit Kategori</h1>
 
         <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary mb-3">
-            <i class="bi bi-arrow-left"></i> Back
+            <i class="bi bi-arrow-left"></i> Kembali
         </a>
 
         @if ($errors->any())
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Whoops!</strong> Ada beberapa masalah dengan input Anda:
+                <strong>Whoops!</strong> Terdapat masalah pada input Anda:
                 <ul class="mb-0">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -24,7 +24,7 @@
 
         <div class="card shadow-sm">
             <div class="card-header bg-warning text-white">
-                <h5 class="mb-0"><i class="bi bi-tags"></i> Category Details</h5>
+                <h5 class="mb-0"><i class="bi bi-tags"></i> Detail Kategori</h5>
             </div>
             <div class="card-body">
                 <form action="{{ route('categories.update', $category->id) }}" method="POST">
@@ -33,9 +33,9 @@
 
                     <!-- Name -->
                     <div class="mb-3">
-                        <label for="name" class="form-label"><i class="bi bi-card-text"></i> Name</label>
+                        <label for="name" class="form-label"><i class="bi bi-card-text"></i> Nama</label>
                         <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" 
-                               value="{{ old('name') ?? $category->name }}" placeholder="Enter category name">
+                               value="{{ old('name') ?? $category->name }}" placeholder="Masukkan nama deskripsi">
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -45,9 +45,9 @@
 
                     <!-- Description -->
                     <div class="mb-3">
-                        <label for="description" class="form-label"><i class="bi bi-file-earmark-text"></i> Description</label>
+                        <label for="description" class="form-label"><i class="bi bi-file-earmark-text"></i> Deskripsi</label>
                         <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" 
-                               value="{{ old('description') ?? $category->description }}" placeholder="Enter category description">
+                               value="{{ old('description') ?? $category->description }}" placeholder="Masukkan deskripsi kategori">
                         @error('description')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -57,7 +57,7 @@
 
                     <!-- Submit Button -->
                     <button type="submit" class="btn btn-warning">
-                        <i class="bi bi-save"></i> Update
+                        <i class="bi bi-save"></i> Perbarui
                     </button>
                 </form>
             </div>

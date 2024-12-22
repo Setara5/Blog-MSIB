@@ -4,7 +4,7 @@
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
     <div class="card p-4 shadow-lg" style="width: 100%; max-width: 450px; border-radius: 10px;">
         <h2 class="text-center mb-3">Login</h2>
-        <p class="text-center text-muted mb-4">Please enter your credentials to access your account.</p>
+        <p class="text-center text-muted mb-4">Mohon masukkan kode untuk mengakses akun anda</p>
         <form action="{{ route('login') }}" method="POST">
             @csrf
             <div class="mb-3">
@@ -29,13 +29,13 @@
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="remember" name="remember">
-                <label class="form-check-label" for="remember">Remember Me</label>
+                <label class="form-check-label" for="remember">Selalu ingat saya</label>
             </div>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary btn-lg">Login</button>
             </div>
             <div class="text-center mt-3">
-                <a href="{{ route('password.request') }}" class="btn btn-link">Forgot Your Password?</a>
+                <a href="{{ route('password.request') }}" class="btn btn-link">Lupa Password Anda?</a>
             </div>
         </form>
     </div>

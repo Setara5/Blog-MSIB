@@ -14,18 +14,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
-        /* Menggunakan Google Fonts */
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f8fc;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
         }
 
-        /* Sidebar Styles */
         #sidebar-wrapper {
             min-height: 100vh;
             width: 250px;
-            background-color: #02060b; /* Warna biru baru */
-            color: #fff;
+            background-color: #1a1f36;
+            color: #ffffff;
             transition: all 0.3s;
         }
 
@@ -38,22 +36,22 @@
             font-weight: bold;
             padding: 1.5rem;
             text-align: center;
-            background-color: #223bbb; /* Biru lebih gelap */
+            background-color: #3d4e6b;
         }
 
         #sidebar-wrapper .list-group-item {
-            background-color: #c0cede; /* Warna biru baru */
-            color: #fff;
+            background-color: #2d3654;
+            color: #c5cae9;
             border: none;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         #sidebar-wrapper .list-group-item:hover {
-            background-color: #6ca4e2; /* Warna biru saat hover */
+            background-color: #536dfe;
+            transform: translateX(10px);
             color: #fff;
         }
 
-        /* Page Content */
         #page-content-wrapper {
             width: 100%;
             transition: all 0.3s;
@@ -64,40 +62,41 @@
 
         /* Navbar Styles */
         .navbar {
-            background-color: #fff;
+            background-color: #ffffff;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .navbar .navbar-brand {
             font-weight: bold;
-            color: #0d6efd;
+            color: #2e619d;
         }
 
         .navbar .nav-link {
-            color: #0d6efd !important;
-            transition: color 0.3s ease;
+            color: #2e619d !important;
+            transition: color 0.3s ease,  transform 0.2s ease;
         }
 
         .navbar .nav-link:hover {
-            color: #0b5ed7 !important;
+            color: #003366 !important;
+            transform: scale(1.1);
         }
 
-        /* Toggle Button */
         #menu-toggle {
-            background-color: #2e3f57;
+            background-color: #2e619d;
             border: none;
-            color: #fff;
+            color: #ffffff;
         }
 
         #menu-toggle:hover {
-            background-color: #0b5ed7;
+            background-color: #003366;
         }
 
         /* User Dropdown */
         .dropdown-menu {
             border: none;
             border-radius: 0.5rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background-color: #ffffff;
         }
 
         .dropdown-item {
@@ -107,7 +106,11 @@
 
         .dropdown-item i {
             margin-right: 0.5rem;
-            color: #0d6efd;
+            color: #2e619d;
+        }
+
+        .dropdown-item:hover {
+        background-color: #eef2f6;
         }
 
         /* Alerts */
@@ -115,7 +118,6 @@
             border-radius: 0.5rem;
         }
 
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
             #sidebar-wrapper {
                 margin-left: -250px;
@@ -126,19 +128,20 @@
         }
         
         footer {
-            background-color: #303131; /* Warna latar belakang bukan biru */
-            color: #e0d5d5; /* Warna teks */
+            background-color: #212121;
+            color: #fafafa;
             padding: 9px;
+            font-size: 14px;
         }
 
         footer a {
-            color: #d1d8e2; /* Warna tautan */
+            color: #90caf9;
             margin: 0 0.5rem;
             transition: color 0.3s ease;
         }
 
         footer a:hover {
-            color: #e6d8d8; /* Warna tautan saat hover */
+            color: #536dfe;
         }
 
     </style>
@@ -153,13 +156,13 @@
                     <i class="bi bi-speedometer2 me-2"></i> Dashboard
                 </a>
                 <a href="{{ route('categories.index') }}" class="list-group-item list-group-item-action bg-primary">
-                    <i class="bi bi-tags me-2"></i> Categories
+                    <i class="bi bi-tags me-2"></i> Kategori
                 </a>
                 <a href="{{ route('posts.index') }}" class="list-group-item list-group-item-action bg-primary">
-                    <i class="bi bi-file-text me-2"></i> Posts
+                    <i class="bi bi-file-text me-2"></i> Postingan
                 </a>
                 <a href="{{ route('authors.index') }}" class="list-group-item list-group-item-action bg-primary">
-                    <i class="bi bi-people me-2"></i> Authors
+                    <i class="bi bi-people me-2"></i> Author
                 </a>
             </div>
         </nav>
@@ -186,7 +189,7 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                                 <li>
                                     <a class="dropdown-item" href="{{ route('profile') }}">
-                                        <i class="bi bi-person me-2"></i> Profile Detail
+                                        <i class="bi bi-person me-2"></i> Detail Profil
                                     </a>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>

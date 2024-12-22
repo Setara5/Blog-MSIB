@@ -26,12 +26,12 @@
                         </p>
                         <div class="mt-4">
                             <a href="{{ route('frontend.home') }}" class="btn btn-secondary me-2">
-                                <i class="fas fa-arrow-left"></i> Back to Home
+                                <i class="fas fa-arrow-left"></i> Kembali ke Halaman Utama
                             </a>
                             @auth
                                 @if (Auth::id() === $post->author_id)
                                     <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning">
-                                        <i class="fas fa-edit"></i> Edit Post
+                                        <i class="fas fa-edit"></i> Edit Postingan
                                     </a>
                                 @endif
                             @endauth
@@ -54,7 +54,7 @@
                                 <p class="text-muted">
                                     <i class="fas fa-calendar-alt"></i> {{ $relatedPost->created_at->format('F d, Y') }}
                                 </p>
-                                <a href="{{ route('frontend.details', $post->id) }}" class="btn btn-primary mt-3">Read More &rarr;</a>
+                                <a href="{{ route('frontend.details', $post->id) }}" class="btn btn-primary mt-3">Baca Selengkapnya &rarr;</a>
                             </div>
                         </a>
                     </div>

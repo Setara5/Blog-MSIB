@@ -14,10 +14,9 @@
         body {
             display: flex;
             flex-direction: column;
-            background-color: #f0f4f7;
+            background-color: #f7f0f0;
         }
 
-        /* Navbar */
         .navbar {
             background-color: #004085;
             padding: 1rem 2rem;
@@ -43,7 +42,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #007bff, #28a745);
+            background: linear-gradient(135deg, #007bff, #07aa0a);
             color: white;
             height: 50vh;
             display: flex;
@@ -68,7 +67,6 @@
             to { opacity: 1; }
         }
 
-        /* Card Styling */
         .card {
             box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -99,7 +97,6 @@
             color: #007bff;
         }
 
-        /* Button Styling */
         .btn-primary {
             background-color: #007bff;
             border: none;
@@ -109,7 +106,6 @@
             background-color: #0056b3;
         }
 
-        /* Footer */
         footer {
             background-color: #002752;
             color: #dee2e6;
@@ -181,8 +177,8 @@
 
     <div class="hero">
         <div>
-            <h1>Explore Our Latest Articles</h1>
-            <p>Stay updated with the latest trends and insights in technology.</p>
+            <h1>Jelajahi Artiker Terbaru Kami</h1>
+            <p>Tetap update dengan Perkembangan Teknologi</p>
         </div>
     </div>
 

@@ -13,15 +13,15 @@
                     <div class="card-body">
                         <h1 class="card-title">{{ $post->title }}</h1>
                         <p class="text-muted">
-                            Posted on {{ $post->created_at->format('F d, Y') }} in <strong>{{ $post->category->name }}</strong> by <strong>{{ $post->author->name }}</strong>
+                            Diposting pada {{ $post->created_at->format('F d, Y') }} in <strong>{{ $post->category->name }}</strong> by <strong>{{ $post->author->name }}</strong>
                         </p>
                         <p class="card-text">
                             {!! nl2br(e($post->content)) !!}
                         </p>
-                        <a href="{{ route('posts.index') }}" class="btn btn-secondary">&larr; Back to Home</a>
+                        <a href="{{ route('posts.index') }}" class="btn btn-secondary">&larr; Kembali ke Halaman Utama</a>
                         @auth
                             @if (Auth::id() === $post->author_id)
-                                <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning">Edit Post</a>
+                                <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning">Edit Postingan</a>
                             @endif
                         @endauth
                     </div>

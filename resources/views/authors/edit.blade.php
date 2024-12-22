@@ -19,7 +19,7 @@
         @method('PUT')
 
         <div class="form-group mb-3">
-            <label for="name">Name</label>
+            <label for="name">Nama</label>
             <input type="text" name="name" class="form-control" id="name" value="{{ $author->name }}" required>
         </div>
 
@@ -33,8 +33,8 @@
             <textarea name="bio" class="form-control" id="bio" rows="4">{{ $author->bio }}</textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Update</button>
-        <a href="{{ route('authors.index') }}" class="btn btn-outline-secondary ms-2">Back</a>
+        <button type="submit" class="btn btn-primary">Perbarui</button>
+        <a href="{{ route('authors.index') }}" class="btn btn-outline-secondary ms-2">Kembali</a>
     </form>
 </div>
 @endsection

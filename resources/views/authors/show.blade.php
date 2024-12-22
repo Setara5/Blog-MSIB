@@ -19,7 +19,7 @@
             </div>
             <div class="mb-3">
                 <strong>Bio:</strong>
-                <p class="text-muted">{{ $author->bio ?? 'No biography available.' }}</p>
+                <p class="text-muted">{{ $author->bio ?? 'Tidak ada Bio tertulis' }}</p>
             </div>
         </div>
     </div>
